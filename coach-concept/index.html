@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maya Caldwell — Leadership &amp; Career Coach</title>
 <meta name="description" content="Strategic leadership and career coaching for ambitious professionals. Clarity, confidence, momentum.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -80,8 +82,8 @@
   }
   .btn-forest{background:var(--forest);color:#fff}
   .btn-forest:hover{background:var(--forest-deep);transform:translateY(-2px);box-shadow:0 14px 32px rgba(18,61,34,.3)}
-  .btn-sand{background:var(--sand);color:var(--ink)}
-  .btn-sand:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(18,61,34,.18)}
+  .btn-outline, .btn-sand{background:transparent;border:2px solid #1C5631;color:#1C5631}
+  .btn-outline:hover, .btn-sand:hover{background:rgba(28,86,49,.06);transform:translateY(-2px);box-shadow:0 14px 32px rgba(18,61,34,.15)}
   .btn-black{background:var(--black);color:#fff}
   .btn-black:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.4)}
   .btn-white{background:#fff;color:var(--forest)}
@@ -127,7 +129,7 @@
   /* ---------- slant marquee strip ---------- */
   .slant{
     background:var(--forest);transform:rotate(-3deg);
-    width:112%;margin:70px -6% 40px;padding:22px 0;overflow:hidden;white-space:nowrap;
+    width:112%;margin:70px -6% 56px;padding:22px 0;overflow:hidden;white-space:nowrap;
     box-shadow:0 12px 40px rgba(18,61,34,.25);
   }
   .slant-track{display:inline-block;animation:scroll 26s linear infinite}
@@ -150,24 +152,11 @@
 
   /* ---------- video reel ---------- */
   .reel{
-    position:relative;border-radius:28px;overflow:hidden;
-    aspect-ratio:16/8;cursor:pointer;
-    background:
-      radial-gradient(ellipse at 20% 30%,rgba(31,122,92,.55),transparent 50%),
-      radial-gradient(ellipse at 80% 70%,rgba(169,235,110,.22),transparent 45%),
-      linear-gradient(140deg,#17452F,var(--forest-deep));
-    box-shadow:var(--shadow);display:grid;place-items:center;
+    position:relative;border-radius:24px;overflow:hidden;
+    width:100%;max-width:1100px;display:block;
+    margin:0 auto;box-shadow:var(--shadow);
   }
-  .reel .play{
-    width:86px;height:86px;border-radius:50%;background:rgba(255,255,255,.95);
-    display:grid;place-items:center;box-shadow:0 18px 50px rgba(0,0,0,.3);transition:transform .25s;
-  }
-  .reel:hover .play{transform:scale(1.08)}
-  .reel .play::after{
-    content:"";width:0;height:0;margin-left:6px;
-    border-left:22px solid var(--forest);
-    border-top:14px solid transparent;border-bottom:14px solid transparent;
-  }
+  .reel video{width:100%;height:auto;display:block}
   .reel figcaption{
     position:absolute;left:28px;bottom:22px;color:#fff;font-size:.88rem;
     font-weight:600;letter-spacing:.03em;opacity:.92;
@@ -190,15 +179,12 @@
   .lede{color:var(--muted);max-width:580px;font-size:1.05rem}
 
   /* about */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .split{display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);gap:56px;align-items:center}
   .portrait{
-    aspect-ratio:1/1;border-radius:36px;
-    overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(150deg,#1F5A43,var(--forest));
-    display:grid;place-items:center;
-  }
-  .portrait::after{
-    content:"MC";font-family:var(--display);font-weight:800;font-size:4.5rem;
-    color:rgba(255,255,255,.3);
+    display:block;width:100%;max-width:480px;
+    aspect-ratio:1/1;object-fit:cover;border-radius:36px;
+    overflow:hidden;box-shadow:var(--shadow);
+    margin:0 auto;position:relative;
   }
   .about-copy p{color:var(--muted);margin-bottom:18px}
   .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
@@ -215,15 +201,7 @@
     overflow:hidden;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;
   }
   .case:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-  .case-img{aspect-ratio:16/10;position:relative;overflow:hidden}
-  .case-img img{width:100%;height:100%;object-fit:cover}
-  .case:nth-child(1) .case-img{background:linear-gradient(135deg,#2C7A55,var(--forest))}
-  .case:nth-child(2) .case-img{background:linear-gradient(135deg,var(--lime),#4E9B6A)}
-  .case:nth-child(3) .case-img{background:linear-gradient(135deg,#17452F,var(--forest-deep))}
-  .case-img::after{
-    content:attr(data-initials);position:absolute;inset:0;display:grid;place-items:center;
-    font-family:var(--display);font-weight:800;font-size:2.2rem;color:rgba(255,255,255,.92);
-  }
+  .case-img{aspect-ratio:16/10;position:relative;overflow:hidden;display:block;object-fit:cover}
   .case-body{padding:26px 26px 30px;display:flex;flex-direction:column;gap:10px;flex:1}
   .case-label{
     font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);
@@ -246,13 +224,7 @@
   .quote p{font-size:1.02rem;line-height:1.55;color:var(--ink)}
   .quote p::before{content:"“";font-family:var(--display);font-weight:800;color:var(--lime);font-size:1.6rem;line-height:0;display:block;margin-bottom:14px}
   .who{display:flex;align-items:center;gap:12px}
-  .avatar{
-    width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
-    font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0;background:var(--forest);
-    font-family:var(--display);
-  }
-  .a2{background:var(--forest-deep)}.a3{background:#2C7A55}
-  .a4{background:#4E9B6A}.a5{background:#17452F}.a6{background:#67A97F}
+  .avatar{width:42px;height:42px;border-radius:50%;flex-shrink:0;display:block;object-fit:cover}
   .who b{font-size:.86rem;display:block;line-height:1.3;font-family:var(--display);color:var(--forest)}
   .who small{font-size:.76rem;color:var(--muted)}
 
@@ -397,9 +369,39 @@
     .cta-circle{display:none}
     .slant{margin-top:50px}
   }
+  @media(max-width:768px){
+    .slant{margin-bottom:32px}
+  }
+  @media(max-width:767px){
+    .btn, .btn-contact, .sticky-cta .btn{
+      padding:12px 20px;
+      font-size:15px;
+      width:auto;
+      max-width:100%;
+      white-space:nowrap;
+    }
+    .sticky-cta{
+      display:flex;
+      justify-content:center;
+    }
+    .hero-grid .hero-ctas, .cta-band .hero-ctas, #top .hero-ctas{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+    }
+    .hero-grid .hero-ctas .btn, .cta-band .hero-ctas .btn, #top .hero-ctas .btn{
+      min-width:220px;
+    }
+  }
   @media(min-width:981px) and (max-width:1120px){
     .quotes{columns:2}
     .nav-pill a{padding:9px 12px;font-size:.84rem}
+  }
+  @media(min-width:900px){
+    header{padding-top:164px}
+    .faq{max-width:1100px;margin:0 auto;margin-top:44px}
+    #faq .wrap > .reveal:first-child{max-width:1100px;margin:0 auto}
   }
 </style>
 </head>
@@ -446,7 +448,7 @@
       </p>
       <div class="hero-ctas">
         <a class="btn btn-forest" href="#book">Book a free strategy call</a>
-        <a class="btn btn-sand" href="#results">See the results</a>
+        <a class="btn btn-outline" href="#results">See the results</a>
       </div>
       <div class="hero-stats">
         <div><b>200+</b><span>Professionals coached</span></div>
@@ -466,9 +468,7 @@
 
   <div class="wrap">
     <figure class="reel" role="button" aria-label="Play intro reel">
-      <!-- SWAP: real video embed -->
-      <div class="play" aria-hidden="true"></div>
-      <figcaption>Watch: meet Maya — 60 seconds</figcaption>
+      <video src="assets/reel.mp4" poster="assets/reel-poster.jpg" controls preload="none" playsinline></video>
     </figure>
   </div>
 </header>
@@ -490,7 +490,8 @@
 
 <section id="about" style="padding-top:20px">
   <div class="wrap split">
-    <div class="portrait reveal" role="img" aria-label="Portrait placeholder"></div>
+    <img class="portrait reveal" src="assets/maya-about.jpg"
+alt="Maya Caldwell reviewing a client strategy notebook at her desk">
     <div class="about-copy reveal">
       <p class="kicker">The work</p>
       <h2>Coaching that treats your career like a <em>strategy</em>, not a hope.</h2>
@@ -523,7 +524,7 @@
     </div>
     <div class="cases">
       <article class="case reveal">
-        <div class="case-img" data-initials="A.O."></div>
+        <img class="case-img" src="assets/case-01.jpg" alt="Leader in a glass-walled meeting room">
         <div class="case-body">
           <span class="case-label">Case Study</span>
           <h3>From first-time manager to Director in 18 months</h3>
@@ -532,7 +533,7 @@
         </div>
       </article>
       <article class="case reveal">
-        <div class="case-img" data-initials="J.M."></div>
+        <img class="case-img" src="assets/case-02.jpg" alt="Offer letter and notes on a desk">
         <div class="case-body">
           <span class="case-label">Case Study</span>
           <h3>The $42k negotiation</h3>
@@ -541,7 +542,7 @@
         </div>
       </article>
       <article class="case reveal">
-        <div class="case-img" data-initials="K.B."></div>
+        <img class="case-img" src="assets/case-03.jpg" alt="Walking into a boardroom">
         <div class="case-body">
           <span class="case-label">Case Study</span>
           <h3>Quiet expert to visible leader</h3>
@@ -562,27 +563,27 @@
     <div class="quotes">
       <div class="quote reveal">
         <p>Six sessions in, I walked into my review with a promotion case already written. I left with the title.</p>
-        <div class="who"><span class="avatar a1">AO</span><div><b>Adaobi O.</b><small>Director of Product, fintech</small></div></div>
+        <div class="who"><img class="avatar" src="assets/avatar-01.jpg" alt="Portrait of Adaobi, Director of Product"><div><b>Adaobi O.</b><small>Director of Product, fintech</small></div></div>
       </div>
       <div class="quote reveal">
         <p>Maya doesn't do affirmations. She does strategy. Every session ended with a move I could make that week.</p>
-        <div class="who"><span class="avatar a2">JM</span><div><b>James M.</b><small>Principal Consultant, London</small></div></div>
+        <div class="who"><img class="avatar" src="assets/avatar-04.jpg" alt="Portrait of James, Principal Consultant"><div><b>James M.</b><small>Principal Consultant, London</small></div></div>
       </div>
       <div class="quote reveal">
         <p>I went from dreading board meetings to running them. That alone was worth ten times the fee.</p>
-        <div class="who"><span class="avatar a3">KB</span><div><b>Kwame B.</b><small>VP Engineering</small></div></div>
+        <div class="who"><img class="avatar" src="assets/avatar-02.jpg" alt="Portrait of Kwame, VP Engineering"><div><b>Kwame B.</b><small>VP Engineering</small></div></div>
       </div>
       <div class="quote reveal">
         <p>The negotiation prep alone paid for the whole programme. $42k more on the offer — same company, new number.</p>
-        <div class="who"><span class="avatar a4">SR</span><div><b>Sofia R.</b><small>Senior Marketing Manager</small></div></div>
+        <div class="who"><img class="avatar" src="assets/avatar-05.jpg" alt="Portrait of Sofia, Senior Marketing Manager"><div><b>Sofia R.</b><small>Senior Marketing Manager</small></div></div>
       </div>
       <div class="quote reveal">
         <p>I finally understand how my own organisation works — and how to move through it. Nobody teaches you this.</p>
-        <div class="who"><span class="avatar a5">DT</span><div><b>David T.</b><small>Head of Operations</small></div></div>
+        <div class="who"><img class="avatar" src="assets/avatar-03.jpg" alt="Portrait of David, Head of Operations"><div><b>David T.</b><small>Head of Operations</small></div></div>
       </div>
       <div class="quote reveal">
         <p>Calm, direct, and impossibly well-prepared. Maya sees the game three moves ahead of you.</p>
-        <div class="who"><span class="avatar a6">LN</span><div><b>Lena N.</b><small>Founder &amp; CEO</small></div></div>
+        <div class="who"><img class="avatar" src="assets/avatar-06.jpg" alt="Portrait of Lena, Founder &amp; CEO"><div><b>Lena N.</b><small>Founder &amp; CEO</small></div></div>
       </div>
     </div>
   </div>
@@ -598,8 +599,7 @@
       actually reward, and how careers quietly accelerate. That playbook is now yours.
     </p>
     <div class="hero-ctas">
-      <a class="btn btn-white" href="#book">Book a free strategy call</a>
-      <a class="btn btn-ghost-light" href="#services">Explore coaching</a>
+      <a class="btn btn-white" href="#services">Explore coaching</a>
     </div>
   </div>
 </section>
@@ -697,7 +697,7 @@
     <defs>
       <path id="badgePath" d="M85,85 m-66,0 a66,66 0 1,1 132,0 a66,66 0 1,1 -132,0"/>
     </defs>
-    <text><textPath href="#badgePath">Your move · Your moment · Your move · Your moment ·</textPath></text>
+    <text><textPath href="#badgePath" textLength="415" lengthAdjust="spacing">YOUR MOVE • YOUR MOMENT • YOUR MOVE • YOUR MOMENT •</textPath></text>
     <circle class="badge-dot" cx="85" cy="19" r="5"/>
   </svg>
 </div>
@@ -715,12 +715,7 @@
       <div>Leadership &amp; Career Coaching · London &amp; worldwide</div>
       <div>© <span id="year"></span> Maya Caldwell</div>
     </div>
-    <p class="disclaimer">
-      <b>Design concept.</b> This page is an independent design mockup built as portfolio
-      work. “Maya Caldwell”, all testimonials, case studies, statistics and credentials are
-      fictional. Not affiliated with, or representative of, any real coach or business.
-      Imagery to be swapped with commissioned photography. · Designed by <b>[YOUR NAME]</b>
-    </p>
+    <p class="disclaimer">Design concept by Ikechukwu Chinaza</p>
   </div>
 </footer>
 
